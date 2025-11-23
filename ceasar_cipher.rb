@@ -7,13 +7,13 @@ class CeasarCipher
     @message = ''
   end
 
-  def shift(string, num)
+  def ceasar_cipher(string, num)
     arr_string = string.split('')
-    arr_string.map! { |letter| change_letter_only(letter.ord, num).chr }
+    arr_string.map! { |letter| shift_letter(letter.ord, num).chr }
     arr_string.join('')
   end
 
-  def change_letter_only(ascii, shift_num)
+  def shift_letter(ascii, shift_num)
     if ascii > 64 && ascii < 91 || ascii > 96 && ascii < 123
       base = ascii < 90 ? 65 : 97
       ascii = ((ascii - base + shift_num) % 26).abs + base
@@ -22,4 +22,4 @@ class CeasarCipher
   end
 end
 
-p CeasarCipher.new.shift('What a string!', 5)
+p CeasarCipher.new.ceasar_cipher('What a string!', 5)

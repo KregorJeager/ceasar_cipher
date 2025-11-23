@@ -26,4 +26,4 @@ class CeasarCipher
   end
 end
 
-CeasarCipher.new.ceasar_cipher('What a string!', 5)
+# CeasarCipher.new.ceasar_cipher('What a string!', 5)

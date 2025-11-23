@@ -20,7 +20,7 @@ class CeasarCipher
       base = ascii < 90 ? 65 : 97
       # Get the postion on the letter in the 26 letter by subtracting base
       # shift letter in that range then add base again
-      ascii = ((ascii - base + shift_num) % 26).abs + base
+      ascii = ((ascii - base + shift_num) % 26) + base
     end
     ascii
   end

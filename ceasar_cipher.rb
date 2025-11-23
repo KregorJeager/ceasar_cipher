@@ -12,6 +12,14 @@ class CeasarCipher
     arr_string.map! { |letter| (letter.ord + num).chr }
     arr_string.join('')
   end
+
+  def change_letter_only(ascii, shift_num)
+    if ascii > 65 || ascii < 97
+      base = ascii < 90 ? 65 : 97
+      ascii = ((ascii - base + shift_num) % 26).abs + base
+    end
+    ascii
+  end
 end
 
-CeasarCipher.new.shift('hello', 4)
+p CeasarCipher.new.change_letter_only('a'.ord, -2).chr
